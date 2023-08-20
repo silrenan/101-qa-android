@@ -2,8 +2,8 @@
 
 $ cd tgrounds/
 $ gitclone https://github.com/Vanguarda101/ebac-m17.git
-$ sudo apt install jenkins
-$
+$ sudo apt install jenkins openjdk-11-jdk (currently is required java 11)
+$ sudo systemctl start jenkins, browser to http://localhost:8080 and configure jenkins
 
 ## replicate previous test scenario
 
