@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('clone github') {
             steps {
-                timeout(time: 15, unit: 'MINUTES') {
+                timeout(time: 5, unit: 'MINUTES') {
                 git branch: 'jenkins', url: 'https://github.com/Vanguarda101/ebac-m17.git'
                 }
             }
