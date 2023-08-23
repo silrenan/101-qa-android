@@ -1,6 +1,7 @@
 # Custom
-notes
-apps/
+NOTES.md
+apps/*AppImage
+apps/woo*
 
 # Logs
 logs
