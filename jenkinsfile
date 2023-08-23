@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    
+    environment {
+        JAVA_HOME = '/usr/lib/jvm/java-19-openjdk-amd64/'
+        ANDROID_HOME = '/opt/Android/Sdk/'
+    }
+
+    stages {
+        stage('clone github') {
+            steps {
+                timeout(time: 15, unit: 'MINUTES') {
+                git branch: 'jenkins', url: 'https://github.com/Vanguarda101/ebac-m17.git'
+                }
+            }
+        }
+        
+        stage('install dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+        
+        stage('run tests') {
+            steps {
+                sh 'NO_COLOR=1 npx wdio'
+            }
+        }
+    }
+}
